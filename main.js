@@ -1,8 +1,8 @@
 import Decimal from "break_eternity.js";
 
-if(localStorage.getItem("boredincremental")){
-    var parseddata = JSON.parse(localStorage.getItem("boredincremental"))
-} 
+if(localStorage.getItem("boredincrementaltest")){
+    var parseddata = JSON.parse(localStorage.getItem("boredincrementaltest"))
+}
 
 console.log(parseddata)
 
@@ -36,21 +36,21 @@ document.getElementById("upgradeCost").innerHTML = data.upgradeCost;
 document.getElementById("currentPointInterval").innerHTML = data.intervalTime;
 
 function save() {
-    localStorage.setItem("boredincremental", JSON.stringify(data));
+    localStorage.setItem("boredincrementaltest", JSON.stringify(data));
   }
-  
+
 function deleteSave() {
-    localStorage.removeItem("boredincremental");
+    localStorage.removeItem("boredincrementaltest");
 }
-  
+
 function handleVisibilityChange() {
     if (document.visibilityState === "hidden") {
       save();
     }
 }
-  
+
 document.addEventListener("visibilitychange", handleVisibilityChange);
-  
+
 document.getElementById("deleteSave").addEventListener('click', function () {
     const confirmed = window.confirm("are you shore you wanna delete it");
     if (confirmed) {
@@ -59,15 +59,15 @@ document.getElementById("deleteSave").addEventListener('click', function () {
       location.reload();
     }
 });
-  
+
 document.getElementById("saveButton").addEventListener('click', function () {
     save();
 });
-  
+
 document.getElementById("deleteSave").addEventListener('click', function () {
     document.removeEventListener("visibilitychange", handleVisibilityChange);
 });
-  
+
 document.getElementById("saveButton").addEventListener('click', function () {
     document.addEventListener("visibilitychange", handleVisibilityChange);
 });
@@ -88,7 +88,7 @@ document.getElementById("upgradeIncrement").addEventListener('click', function()
     console.log(data.pointValue.cmp(data.upgradeCost));
     if(data.pointValue.cmp(data.upgradeCost)==1){
         data.pointValue = data.pointValue.subtract(data.upgradeCost);
-        data.upgradeCost = data.upgradeCost.multiply(3.141);  
+        data.upgradeCost = data.upgradeCost.multiply(3.141);
         data.incrementValue = data.incrementValue.multiply(2.239482345);
         document.getElementById("upgradeCost").innerHTML = data.upgradeCost.toPrecision(data.decimalPlaceCount);
         document.getElementById("currentPointIncrement").innerHTML = data.incrementValue.toPrecision(data.decimalPlaceCount);
