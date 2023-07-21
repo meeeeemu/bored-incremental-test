@@ -1,0 +1,67 @@
+@keyframes myAnim {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+}
+
+.exitanim{
+    animation: myAnim 1s cubic-bezier(0.87, 0, 0.13, 1) 0s 1 normal forwards;
+}
+
+body {
+    max-width: initial;
+    overflow: hidden;
+}
+
+#pointValue {
+    overflow: hidden;
+}
+
+#rebirthWindow{
+    position: absolute;
+    background-color: #263342;
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 20px;
+    width: 200px;
+    overflow: hidden;
+    border: 2px;
+    text-align: center;
+    z-index: 9;
+    position: absolute;
+    left: 1650px;
+    background-color: rgba(38, 51, 66, 0.61);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0 0 0.4rem black);
+}
+
+#rebirthWindowheader{
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(44, 59, 77, 0.61);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0 0 0.1rem black);
+}
+
+#potentialText {
+    padding: 20px;
+}
+
+#rebirthButton {
+    margin: 20px;
+}
+
+#rebirthCloseButton {
+    position: relative;
+    left: 275px;
+    top: 5px;
+}

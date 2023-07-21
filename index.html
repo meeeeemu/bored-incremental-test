@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>i am bored incremental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <h1 style="font-size: 48px;">points: <div id="pointValue">Nothing</div></h1>
+
+    <h2>upgrade cost: <div id="upgradeCost">nothing</div></h2>
+
+    <button id="upgradeIncrement">upgrade increment value</button>
+
+    <h3>current increment value: <div id="currentPointIncrement">nothing</div></h3>
+
+    <h3>current interval value: <div id="currentPointInterval">nothing</div></h3>
+
+    <button id="upgradeInterval" class="button">convert <div id="pointCostInterval">0</div> to lower interval value</button>
+
+    <div id="rebirthWindow" class="window-top">
+
+      <div id="rebirthWindowheader">rebirth (draggable)</div>
+
+      <h3 id="potentialText">current rebirth potential: <div id="rebirthPotential">1</div></h3>
+
+      <button id="rebirthButton">rebirth</button>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id="deleteSave">!!!! DELETE SAVE !!!!</button>
+    <button id="saveButton">save (the game autosaves)</button>
+<!--
+  JSPM Generator Import Map
+  Edit URL: https://generator.jspm.io/#Y2VhYGBkDM0rySzJSU1hSCpKTcyOTy1JLcrLLKnUyyp2MNQz1jMEAEOPibkmAA
+-->
+  <script type="importmap">
+  {
+    "imports": {
+      "break_eternity.js": "https://ga.jspm.io/npm:break_eternity.js@1.3.1/dist/break_eternity.esm.js"
+    }
+  }
+  </script>
+
+  <!-- ES Module Shims: Import maps polyfill for olrder browsers without import maps support (eg Safari 16.3) -->
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js" crossorigin="anonymous"></script>
+
+  <script src="drag.js"></script>
+  <script src="paginations.js"></script>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
