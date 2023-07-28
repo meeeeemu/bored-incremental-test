@@ -87,6 +87,7 @@ function mainIncrement(){
         document.getElementById("upgradeInterval").style = "cursor: not-allowed; pointer-events: none;";
     }
     document.getElementById('rebirthPotential').innerHTML = data.rebirthMultiplier.toPrecision(data.decimalPlaceCount)
+    document.getElementById('rebirthPrice').innerHTML = data.rebirthPrice
 }
 
 document.getElementById('rebirthButton').addEventListener('click', function(){
@@ -101,6 +102,7 @@ document.getElementById('rebirthButton').addEventListener('click', function(){
         data.intervalTime = 500;
         data.decimalPlaceCount = 6;
         data.rebirthCounts = data.rebirthCounts.add(1);
+        data.rebirthPrice = data.rebirthPrice.multiply(1.5)
         document.getElementById('currentPointIncrement').innerHTML = data.incrementValue.multiply(data.rebirthMultiplier).toPrecision(data.decimalPlaceCount);
         document.getElementById('upgradeCost').innerHTML = data.upgradeCost.toPrecision(data.decimalPlaceCount);
         document.getElementById('currentPointInterval').innerHTML = data.intervalTime;
