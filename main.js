@@ -15,7 +15,8 @@ if(parseddata){
         intervalTime: parseddata.intervalTime,
         decimalPlaceCount: parseddata.decimalPlaceCount,
         rebirthMultiplier: new Decimal(parseddata.rebirthMultiplier),
-        rebirthCounts: new Decimal(parseddata.rebirthCounts)
+        rebirthCounts: new Decimal(parseddata.rebirthCounts),
+        rebirthPrice: new Decimal(parseddata.rebirthPrice)
     }
 } else {
     var data = {
@@ -26,7 +27,8 @@ if(parseddata){
         intervalTime: 500,
         decimalPlaceCount: 6,
         rebirthMultiplier: new Decimal(1),
-        rebirthCounts: new Decimal(0)
+        rebirthCounts: new Decimal(0),
+        rebirthPrice: new Decimal(1e6)
     }
 }
 
@@ -88,7 +90,8 @@ function mainIncrement(){
 }
 
 document.getElementById('rebirthButton').addEventListener('click', function(){
-    if(data.pointValue>=1e6){
+    console.log(data.pointValue.cmp(data.rebirthPrice));
+    if(data.pointValue.cmp(data.rebirthPrice)==1){
         data.rebirthMultiplier = data.rebirthMultiplier.add(0.1);
         document.getElementById('rebirthPotential').innerHTML = data.rebirthMultiplier.toPrecision(data.decimalPlaceCount)
         data.pointValue = new Decimal(0);
@@ -112,8 +115,8 @@ document.getElementById("upgradeIncrement").addEventListener('click', function()
     console.log(data.pointValue.cmp(data.upgradeCost));
     if(data.pointValue.cmp(data.upgradeCost)==1){
         data.pointValue = data.pointValue.subtract(data.upgradeCost);
-        data.upgradeCost = (data.upgradeCost.multiply(3.141)).div(data.rebirthMultiplier);
-        data.incrementValue = data.incrementValue.multiply(2.482345);
+        data.upgradeCost = (data.upgradeCost.multiply(3.141)).multiply(data.rebirthMultiplier.multiply(0.7));
+        data.incrementValue = data.incrementValue.multiply(8.482345);
         document.getElementById("upgradeCost").innerHTML = data.upgradeCost.toPrecision(data.decimalPlaceCount);
         document.getElementById("currentPointIncrement").innerHTML = data.incrementValue.toPrecision(data.decimalPlaceCount);
     }
